@@ -80,12 +80,12 @@ $(function() {
 	$("#queryBtn").click(function() {
 		$("#resultText").hide();
 		$("#resultTable").show();
-		$.get("x7Stat/cuBe_9/flexQ/raw~exec", params(), function(data) {
+		$.get("x7Stat/cuBe_9/flexQ/rawExec", params(), function(data) {
 			render(data);
 		});
 	});
 	$("#exportBtn").click(function() {
-		$.get("x7Stat/cuBe_9/flexQ/dump~csv", params(), function(path) {
+		$.get("x7Stat/cuBe_9/flexQ/dumpCsv", params(), function(path) {
 			$("#resultTable").hide();
 			$("#resultText").show().text("已导出：" + path);
 		});

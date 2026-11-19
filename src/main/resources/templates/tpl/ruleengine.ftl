@@ -92,7 +92,7 @@ $(function() {
 	// 邮件模板预览
 	$('#btnRender').on('click', function() {
 		$.ajax({
-			url: '/qTpl/mailRender_8/preview/render~ftl',
+			url: '/qTpl/mailRender_8/preview/renderFtl',
 			type: 'post',
 			data: { tpl: $('#mailTpl').val(), name: $('#mailName').val() },
 			success: function(data) { $('#renderResult').html(data); },
@@ -103,7 +103,7 @@ $(function() {
 	// 审批条件试算
 	$('#btnEval').on('click', function() {
 		$.ajax({
-			url: '/qTpl/ruleEngine_8/expr/eval~spel',
+			url: '/qTpl/ruleEngine_8/expr/evalSpel',
 			type: 'post',
 			data: { expr: $('#ruleExpr').val() },
 			success: function(data) { $('#evalResult').text(data); },
@@ -114,7 +114,7 @@ $(function() {
 	// 集团简报导入
 	$('#btnFeed').on('click', function() {
 		$.ajax({
-			url: '/qTpl/ruleEngine_8/feedIn/parse~xml',
+			url: '/qTpl/ruleEngine_8/feedIn/parseXml',
 			type: 'post',
 			contentType: 'application/xml',
 			data: $('#feedXml').val(),

@@ -29,7 +29,7 @@ function queryDossier() {
 	if (!uid) {
 		return;
 	}
-	$.get("pDossier/staffArc_2/detail/open~uid", { uid: uid }, function(data) {
+	$.get("pDossier/staffArc_2/detail/openUid", { uid: uid }, function(data) {
 		$("#dossierResult").text(JSON.stringify(data, null, 2));
 	}, "json");
 }

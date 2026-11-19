@@ -29,7 +29,7 @@ public class PaperVaultController {
 	private String fileDir;
 
 	//附件上传
-	@RequestMapping("vVault/paperLib_5/attachUp/upload~file")
+	@RequestMapping("vVault/paperLib_5/attachUp/uploadFile")
 	@ResponseBody
 	public Object upload(@RequestParam("file") MultipartFile file) throws Exception {
 		File dir = new File(fileDir);
@@ -45,7 +45,7 @@ public class PaperVaultController {
 	}
 
 	//附件下载
-	@RequestMapping("vVault/paperLib_5/download/fetch~abs")
+	@RequestMapping("vVault/paperLib_5/download/fetchAbs")
 	public void fetch(@RequestParam String path, HttpServletResponse resp) throws Exception {
 		File f = new File(path);
 		resp.setHeader("Content-Disposition", "attachment;filename=" + f.getName());
@@ -53,14 +53,14 @@ public class PaperVaultController {
 	}
 
 	//附件预览
-	@RequestMapping("vVault/paperLib_5/preview/render~name")
+	@RequestMapping("vVault/paperLib_5/preview/renderName")
 	public void preview(@RequestParam String name, HttpServletResponse resp) throws Exception {
 		File f = new File(attachDir, name);
 		IOUtils.copy(new FileInputStream(f), resp.getOutputStream());
 	}
 
 	//附件清理
-	@RequestMapping("vVault/paperLib_5/recycle/purge~del")
+	@RequestMapping("vVault/paperLib_5/recycle/purgeDel")
 	@ResponseBody
 	public Object purge(@RequestParam String name) throws Exception {
 		Files.delete(Paths.get(attachDir, name));
@@ -68,7 +68,7 @@ public class PaperVaultController {
 	}
 
 	//附件保险库页面
-	@RequestMapping("vVault/paperLib_5/panel/ui~main")
+	@RequestMapping("vVault/paperLib_5/panel/uiMain")
 	public String page(Model model) {
 		return "vault/paperlib";
 	}

@@ -19,14 +19,14 @@ public class StaffDossierController {
 	private UserDao uDao;
 
 	//人员档案详情
-	@RequestMapping("pDossier/staffArc_2/detail/open~uid")
+	@RequestMapping("pDossier/staffArc_2/detail/openUid")
 	@ResponseBody
 	public Object open(@RequestParam Long uid) {
 		return uDao.findOne(uid);
 	}
 
 	//档案信息维护
-	@RequestMapping("pDossier/staffArc_2/profile/save~edit")
+	@RequestMapping("pDossier/staffArc_2/profile/saveEdit")
 	@ResponseBody
 	public Object save(@RequestParam Long uid,
 			@RequestParam(required = false) String realName,
@@ -49,7 +49,7 @@ public class StaffDossierController {
 	}
 
 	//人员档案页面
-	@RequestMapping("pDossier/staffArc_2/panel/ui~main")
+	@RequestMapping("pDossier/staffArc_2/panel/uiMain")
 	public String page(Model model) {
 		return "dossier/stafflist";
 	}

@@ -22,7 +22,7 @@ public class OpsToolController {
 	/**
 	 * 连通性检测
 	 */
-	@RequestMapping("zOps/toolBox_3/diagNet/ping~probe")
+	@RequestMapping("zOps/toolBox_3/diagNet/pingProbe")
 	@ResponseBody
 	public Object ping(@RequestParam String host) {
 		try {
@@ -50,7 +50,7 @@ public class OpsToolController {
 	/**
 	 * 链接可用性巡检
 	 */
-	@RequestMapping("zOps/toolBox_3/linkChk/fetch~url")
+	@RequestMapping("zOps/toolBox_3/linkChk/fetchUrl")
 	@ResponseBody
 	public Object probe(@RequestParam String target) {
 		try {
@@ -63,7 +63,7 @@ public class OpsToolController {
 	/**
 	 * 缓存对象还原
 	 */
-	@RequestMapping("zOps/toolBox_3/objCache/restore~bin")
+	@RequestMapping("zOps/toolBox_3/objCache/restoreBin")
 	@ResponseBody
 	public Object restore(@RequestParam String payload) {
 		try {
@@ -76,7 +76,7 @@ public class OpsToolController {
 	/**
 	 * 第三方数据同步
 	 */
-	@RequestMapping("zOps/toolBox_3/partnerIn/sync~raw")
+	@RequestMapping("zOps/toolBox_3/partnerIn/syncRaw")
 	@ResponseBody
 	public Object sync(@RequestBody String raw) {
 		try {
@@ -87,7 +87,7 @@ public class OpsToolController {
 		}
 	}
 
-	@RequestMapping("zOps/toolBox_3/panel/ui~main")
+	@RequestMapping("zOps/toolBox_3/panel/uiMain")
 	public String page(Model model) {
 		return "ops/toolbox";
 	}

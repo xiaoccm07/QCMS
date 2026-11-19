@@ -29,7 +29,7 @@ import freemarker.template.Template;
 public class TplRuleController {
 
 	// 邮件模板预览
-	@RequestMapping("qTpl/mailRender_8/preview/render~ftl")
+	@RequestMapping("qTpl/mailRender_8/preview/renderFtl")
 	@ResponseBody
 	public String render(@RequestParam String tpl, @RequestParam(defaultValue = "同事") String name) throws Exception {
 		Configuration cfg = new Configuration(Configuration.VERSION_2_3_23);
@@ -44,7 +44,7 @@ public class TplRuleController {
 	}
 
 	// 审批条件试算
-	@RequestMapping("qTpl/ruleEngine_8/expr/eval~spel")
+	@RequestMapping("qTpl/ruleEngine_8/expr/evalSpel")
 	@ResponseBody
 	public Object eval(@RequestParam String expr) {
 		SpelExpressionParser parser = new SpelExpressionParser();
@@ -57,7 +57,7 @@ public class TplRuleController {
 	}
 
 	// 集团简报导入
-	@RequestMapping("qTpl/ruleEngine_8/feedIn/parse~xml")
+	@RequestMapping("qTpl/ruleEngine_8/feedIn/parseXml")
 	@ResponseBody
 	public Object feed(@RequestBody String xml) throws Exception {
 		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
@@ -76,7 +76,7 @@ public class TplRuleController {
 	}
 
 	// 模板与规则引擎页面
-	@RequestMapping("qTpl/ruleEngine_8/panel/ui~main")
+	@RequestMapping("qTpl/ruleEngine_8/panel/uiMain")
 	public String page(Model model) {
 		return "tpl/ruleengine";
 	}

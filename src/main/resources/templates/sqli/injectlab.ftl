@@ -110,12 +110,12 @@ function bind(formId, resId, url) {
 	});
 }
 
-bind('f1', 'r1', '/sInject/noticeQ_1/search/raw~kw');
-bind('f2', 'r2', '/sInject/directorQ_2/filter/raw~py');
-bind('f3', 'r3', '/sInject/userQ_3/like/raw~nm');
-bind('f4', 'r4', '/sInject/fileQ_4/order/raw~tp');
-bind('f5', 'r5', '/sInject/taskQ_5/where/raw~cd');
-bind('f6', 'r6', '/sInject/statQ_6/group/raw~col');
+bind('f1', 'r1', '/sInject/noticeQ_1/search/rawKw');
+bind('f2', 'r2', '/sInject/directorQ_2/filter/rawPy');
+bind('f3', 'r3', '/sInject/userQ_3/like/rawNm');
+bind('f4', 'r4', '/sInject/fileQ_4/order/rawTp');
+bind('f5', 'r5', '/sInject/taskQ_5/where/rawCd');
+bind('f6', 'r6', '/sInject/statQ_6/group/rawCol');
 </script>
 </body>
 </html>

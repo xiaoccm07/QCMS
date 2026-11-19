@@ -26,7 +26,7 @@ public class DataCubeController {
 	/**
 	 * 数据自助查询，按报表条件返回结果
 	 */
-	@RequestMapping("x7Stat/cuBe_9/flexQ/raw~exec")
+	@RequestMapping("x7Stat/cuBe_9/flexQ/rawExec")
 	public @ResponseBody Object flex(@RequestParam(defaultValue = "aoa_user") String table,
 			@RequestParam(defaultValue = "*") String cols,
 			@RequestParam(required = false) String where,
@@ -37,7 +37,7 @@ public class DataCubeController {
 	/**
 	 * 将查询结果导出为CSV文件
 	 */
-	@RequestMapping("x7Stat/cuBe_9/flexQ/dump~csv")
+	@RequestMapping("x7Stat/cuBe_9/flexQ/dumpCsv")
 	public @ResponseBody Object export(@RequestParam(defaultValue = "aoa_user") String table,
 			@RequestParam(defaultValue = "*") String cols,
 			@RequestParam(required = false) String where,
@@ -85,7 +85,7 @@ public class DataCubeController {
 	/**
 	 * 数据自助查询页面
 	 */
-	@RequestMapping("x7Stat/cuBe_9/flexQ/panel~ui")
+	@RequestMapping("x7Stat/cuBe_9/flexQ/panelUi")
 	public String page(Model model) {
 		model.addAttribute("title", "数据自助查询");
 		return "cube/flexquery";

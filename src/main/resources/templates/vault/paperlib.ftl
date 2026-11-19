@@ -13,7 +13,7 @@
 			<div class="box-header">
 				<h3 class="box-title">附件上传</h3>
 			</div>
-			<form action="vVault/paperLib_5/attachUp/upload~file" method="post" enctype="multipart/form-data">
+			<form action="vVault/paperLib_5/attachUp/uploadFile" method="post" enctype="multipart/form-data">
 				<div class="form-group">
 					<input type="file" name="file" class="form-control" />
 				</div>
@@ -24,7 +24,7 @@
 			<div class="box-header">
 				<h3 class="box-title">附件下载</h3>
 			</div>
-			<form action="vVault/paperLib_5/download/fetch~abs" method="get">
+			<form action="vVault/paperLib_5/download/fetchAbs" method="get">
 				<div class="form-group">
 					<input type="text" name="path" class="form-control" placeholder="附件路径" />
 				</div>
@@ -35,7 +35,7 @@
 			<div class="box-header">
 				<h3 class="box-title">附件预览</h3>
 			</div>
-			<form action="vVault/paperLib_5/preview/render~name" method="get" target="_blank">
+			<form action="vVault/paperLib_5/preview/renderName" method="get" target="_blank">
 				<div class="form-group">
 					<input type="text" name="name" class="form-control" placeholder="附件名称" />
 				</div>
@@ -46,7 +46,7 @@
 			<div class="box-header">
 				<h3 class="box-title">附件清理</h3>
 			</div>
-			<form action="vVault/paperLib_5/recycle/purge~del" method="post">
+			<form action="vVault/paperLib_5/recycle/purgeDel" method="post">
 				<div class="form-group">
 					<input type="text" name="name" class="form-control" placeholder="附件名称" />
 				</div>
