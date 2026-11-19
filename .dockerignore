@@ -1,0 +1,8 @@
+target/
+.git/
+.idea/
+*.iml
+app.log
+export/
+static/file/
+static/attachment/

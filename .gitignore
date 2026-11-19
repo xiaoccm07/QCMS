@@ -1,0 +1,10 @@
+/target/
+.idea/
+*.iml
+.DS_Store
+/app.log
+*.log
+/export/
+/static/file/
+/static/attachment/
+nohup.out

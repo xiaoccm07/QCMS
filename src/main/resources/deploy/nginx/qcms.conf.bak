@@ -1,0 +1,9 @@
+# 生产 nginx 配置备份 2026-06-30
+upstream qcms_backend { server 10.20.30.11:8088; server 10.20.30.12:8088 backup; }
+server {
+    listen 443 ssl;
+    server_name oa.qcms-inner.com;
+    ssl_certificate_key /etc/nginx/certs/server.key;
+    location / { proxy_pass http://qcms_backend; }
+    location /druid/ { proxy_pass http://10.20.30.11:8088; }
+}

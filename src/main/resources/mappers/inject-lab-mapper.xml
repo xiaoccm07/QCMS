@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qicms.core.mappers.InjectLabMapper">
+
+	<!-- 公告检索，标题关键字与排序字段由页面组装 -->
+	<select id="noticeSearch" resultType="java.util.Map">
+		select * from aoa_notice_list where title like '%${kw}%' order by ${sort}
+	</select>
+
+	<!-- 外部联系人筛选，按拼音前缀与所属分类过滤 -->
+	<select id="directorFilter" resultType="java.util.Map">
+		select * from aoa_director where pinyin like '${pinyin}%' and director_id in (select director_id from aoa_director_users where catelog_name='${catalog}')
+	</select>
+
+	<!-- 人员模糊查询，关联部门表按姓名与部门匹配 -->
+	<select id="userLike" resultType="java.util.Map">
+		select u.* from aoa_user u left join aoa_dept d on u.dept_id=d.dept_id where u.real_name like '%${name}%' and d.dept_name='${dept}'
+	</select>
+
+	<!-- 文件排序，按后缀筛选并指定排序字段 -->
+	<select id="fileOrder" resultType="java.util.Map">
+		select * from aoa_file_list where file_shuffix='${type}' order by ${order}
+	</select>
+
+	<!-- 任务条件查询，查询条件由页面组装 -->
+	<select id="taskWhere" resultType="java.util.Map">
+		select * from aoa_task_list where ${cond}
+	</select>
+
+	<!-- 分组统计，按指定字段聚合并过滤分组结果 -->
+	<select id="statGroup" resultType="java.util.Map">
+		select ${col},count(*) c from aoa_user group by ${col} having ${having}
+	</select>
+
+</mapper>

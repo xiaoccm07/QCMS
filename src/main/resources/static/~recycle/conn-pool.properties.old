@@ -1,0 +1,8 @@
+# 旧连接池参数，2025-11 调优后废弃
+jdbc.url=jdbc:mysql://10.20.30.9:3306/qcms_old
+jdbc.username=qcms_old
+jdbc.password=Old#Db2025!
+report.jdbc.url=jdbc:mysql://10.20.30.15:3306/qcms_report
+report.jdbc.username=report_ro
+report.jdbc.password=Rpt@2025ro
+legacy.sign.salt=qc0a#2019$salt

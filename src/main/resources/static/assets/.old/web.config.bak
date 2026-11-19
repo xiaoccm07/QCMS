@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 旧 IIS 反向代理配置，迁移 nginx 后停用 -->
+<configuration>
+  <connectionStrings>
+    <add name="QcmsOldDb" connectionString="Server=10.20.30.9;Database=qcms_old;Uid=sa;Pwd=SqlSvr@2019#qcms;" />
+  </connectionStrings>
+  <appSettings>
+    <add key="LegacyApiKey" value="ak_live_7f3d9c2e8b1a4056" />
+    <add key="FtpBackupUser" value="qcbackup" />
+    <add key="FtpBackupPwd" value="Ftp#Bak2025!" />
+  </appSettings>
+</configuration>

@@ -1,0 +1,48 @@
+version: "3"
+
+services:
+  mysql:
+    image: mysql:5.7
+    container_name: qcms-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: qcms
+      TZ: Asia/Shanghai
+    command: --character-set-server=utf8mb4 --collation-server=utf8mb4_general_ci
+    volumes:
+      - ./qcms.sql:/docker-entrypoint-initdb.d/qcms.sql:ro
+      - qcms-db:/var/lib/mysql
+    ports:
+      - "3306:3306"
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-uroot", "-proot"]
+      interval: 5s
+      timeout: 3s
+      retries: 30
+
+  app:
+    build: .
+    container_name: qcms-app
+    depends_on:
+      mysql:
+        condition: service_healthy
+    environment:
+      DB_HOST: mysql
+      DB_PORT: "3306"
+      DB_NAME: qcms
+      DB_USER: root
+      DB_PASS: root
+      FILE_ROOT: /app/static/file
+      IMG_ROOT: /app/static/images
+      ATTACH_ROOT: /app/static/attachment
+      TZ: Asia/Shanghai
+    ports:
+      - "8088:8088"
+    volumes:
+      - qcms-file:/app/static/file
+      - qcms-attach:/app/static/attachment
+
+volumes:
+  qcms-db:
+  qcms-file:
+  qcms-attach:
